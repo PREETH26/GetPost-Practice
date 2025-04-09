@@ -29,7 +29,7 @@ app.get("/",async(req,res)=>{
         if(!user){
             return req.status(404).json({success:false,message:"Not found"})
         }
-        return res.status(200).json({success:true,message:"Found Successfully"})
+        return res.status(200).json({success:true,message:user,})
     } catch (error) {
         return res.status(500).json({success:false,message:"Server error",details:error.message})    
     }
@@ -42,7 +42,7 @@ app.get("/:id",async(req,res)=>{
         if(!user){
             return res.status(404).json({success:false,message:"Not found"})
         }
-        return res.status(200).json({success:true,message:"Found Successfully"})
+        return res.status(200).json({success:true,message:user})
     } catch (error) {
         return res.status(500).json({success:false,message:"Server error",details:error.message})    
     }
