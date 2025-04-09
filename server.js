@@ -10,7 +10,7 @@ mongoose.connect(process.env.MONGO_URI)
 }).catch(()=>{
     console.log("Not connected")
 })
-app.post("/",async(req,res)=>{
+app.post("/register",async(req,res)=>{
     const {name,email,content} = req.body;
     if(!name||!email){
         return res.status(400).json({success:false,message:"Missing Details"})
